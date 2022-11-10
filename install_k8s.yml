@@ -1,0 +1,8 @@
+---
+
+- hosts: k8s_master
+  become: true
+  roles:
+    - name: k8s_master
+      role: k8s_master
+      tags: ["k8s_master"]
