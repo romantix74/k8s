@@ -4,5 +4,5 @@
   become: true
   roles:
     - name: k8s_master
-      role: k8s_master
+      role: geerlingguy.kubernetes
       tags: ["k8s_master"]

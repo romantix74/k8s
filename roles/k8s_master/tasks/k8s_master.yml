@@ -1,0 +1,17 @@
+---
+
+- name: Set hostname fact
+  # нижнее подчеркивание запрещено, поэтому заменяем
+  set_fact: k8s_hostname="{{ inventory_hostname | replace('_','-') }}"
+
+- name: Set a hostname on a master
+  ansible.builtin.hostname:
+    name: "{{ k8s_hostname }}"
+
+
+# Step 2.3
+- name: Initialize the Kubernetes cluster using kubeadm
+  command: kubeadm init
+#  command: kubeadm init --apiserver-advertise-address="{{ master_node_ip }}" \
+#    --apiserver-cert-extra-sans="{{ master_node_ip }}"  --node-name "{{ k8s_hostname }}" \
+#    --pod-network-cidr="{{ pod_network_cidr }}"

@@ -1,0 +1,18 @@
+---
+kubernetes_version: '1.25'
+kubernetes_role: "master"
+kubernetes_allow_pods_on_master: true
+
+kubernetes_pod_network:
+  # Flannel CNI.
+#  cni: 'flannel'
+#  cidr: '10.244.0.0/16'
+  # Calico CNI.
+   cni: 'calico'
+   cidr: '192.168.0.0/16'
+
+
+## встроенная переменная для старых версий k8s
+#kubernetes_flannel_manifest_file_rbac: https://raw.githubusercontent.com/coreos/flannel/master/Documentation/k8s-manifests/kube-flannel-rbac.yml
+
+#k8s_master: true

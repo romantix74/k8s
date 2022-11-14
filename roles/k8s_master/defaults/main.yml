@@ -1,2 +1,10 @@
 ---
 # defaults file for k8s_master
+
+# для master ноды указываем флаг True
+master: false
+
+# адрес k8s master:
+master_node_ip: "10.9.0.22"
+
+pod_network_cidr: "192.168.0.0/16"
