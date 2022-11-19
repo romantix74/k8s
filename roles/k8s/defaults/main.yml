@@ -1,5 +1,5 @@
 ---
-# defaults file for k8s_master
+# defaults file for k8s
 
 # для master ноды указываем флаг True
 master: false

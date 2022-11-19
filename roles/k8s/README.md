@@ -12,7 +12,7 @@ Any pre-requisites that may not be covered by Ansible itself or the role should 
 Role Variables
 --------------
 
-    k8s_master: bool - для мастер ноды true,  для других false
+    kubernetes_role: master или node 
     master_node_ip:  адрес k8s master
 
 Dependencies

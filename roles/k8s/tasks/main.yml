@@ -1,0 +1,10 @@
+---
+
+- name: Do common prereq for master and minions
+  include_tasks: common.yml
+
+- name: Configure k8s
+  include_tasks: k8s_master.yml
+  when: kubernetet_role == "master"
+
+

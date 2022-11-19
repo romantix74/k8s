@@ -1,8 +1,18 @@
 ---
 
-- hosts: k8s_master
+- hosts: k8s
   become: true
   roles:
-    - name: k8s_master
+    - name: k8s
       role: geerlingguy.kubernetes
-      tags: ["k8s_master"]
+      tags: ["k8s"]
+
+- hosts: k8s_nodes
+  become: true
+  roles:
+    - name: prereq
+      role: k8s
+      tags: ["k8s_nodes"]
+    - name: k8s_node
+      role: geerlingguy.kubernetes
+      tags: ["k8s_nodes"]

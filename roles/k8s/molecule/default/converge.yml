@@ -2,6 +2,6 @@
 - name: Converge
   hosts: all
   tasks:
-    - name: "Include k8s_master"
+    - name: "Include k8s"
       include_role:
-        name: "k8s_master"
+        name: "k8s"
